@@ -38,6 +38,7 @@ if (!$result) {
     
     <table>
         <tr>
+            <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -50,6 +51,7 @@ if (!$result) {
         // Loop through the retrieved data and display it in a table
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>';
+            echo '<td>' . $row['ID'] . '</td>';
             echo '<td>' . $row['fname'] . '</td>';
             echo '<td>' . $row['lname'] . '</td>';
             echo '<td>' . $row['email'] . '</td>';
@@ -60,5 +62,16 @@ if (!$result) {
         }
         ?>
     </table>
+
+    <br><br>
+    <form action="" style="width: 300px; padding: 20px; border: 1px solid #ccc; border-radius: 5px; padding-right:40px; background-color:skyblue">
+    <label for="" style="font-weight: bold;">ID</label><br>
+    <input type="text" style="width: 100%; padding: 5px; margin-bottom: 10px;">
+    <br>
+    <label for="" style="font-weight: bold;">Username</label><br>
+    <input type="text" style="width: 100%; padding: 5px; margin-bottom: 10px;">
+    <input type="submit" value="update" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+</form>
+
 </body>
 </html>
